@@ -88,6 +88,7 @@ jobs:
         REPO_NAME : sample-nuget
       run: |
         jf nugetc --repo-resolve=$REPO_NAME
+        cd Satellite-Packages && jf nuget restore ./SatellitePackageSample.sln
      
     - name: Build & Deploy
       run: | 
