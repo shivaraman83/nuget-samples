@@ -91,8 +91,6 @@ jobs:
      
     - name: Build & Deploy
       run: | 
-        cd D:\a\nuget-samples\nuget-samples\.jfrog\projects\
-        cat nuget.yaml
         cd Satellite-Packages && jf nuget restore ./SatellitePackageSample.sln
 
 
