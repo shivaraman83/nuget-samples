@@ -72,8 +72,26 @@ jobs:
       uses: microsoft/setup-msbuild@v1.0.2
 
     # Execute all unit tests in the solution
-    - name: Execute unit tests
-      run: dotnet test
+    #- name: Execute unit tests
+      #run: dotnet test
+      
+    - name: Setup JFrog CLI
+      uses: jfrog/setup-jfrog-cli@v3
+      env:
+        JF_ENV_1: ${{ secrets.JF_SECRET_ENV_1 }}
+        
+    - name: Ping JFrog CLI
+      run: jf rt ping
+
+    - name: Setup nuget Config
+      env:
+        REPO_NAME : sample-nuget
+      run: |
+        jf nugetc --repo-resolve $REPO_NAME
+     
+    - name: Build & Deploy
+      run: | 
+        cd Satellite-Packages && jf nuget restore
 
 
 
