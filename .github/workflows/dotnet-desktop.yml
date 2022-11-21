@@ -57,7 +57,6 @@ jobs:
     - name: Build & Deploy
       run: | 
         cd Satellite-Packages && jf nuget restore ./SatellitePackageSample.sln
-        jf nuget restore 
         jf nuget pack
 
 
