@@ -47,7 +47,7 @@ jobs:
       env:
         REPO_NAME : sample-nuget
       run: |
-        cd Satellite-Packages
+        cd NuGetProtocolSamples
         jf nugetc --repo-resolve=$REPO_NAME
 
      
