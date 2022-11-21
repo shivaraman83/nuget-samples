@@ -13,9 +13,6 @@ jobs:
                              # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
 
     env:
-      Solution_Name: SatellitePackageSample.sln                      # Replace with your solution name, i.e. MyWpfApp.sln.
-      #Wap_Project_Directory: Satellite-Packages    # Replace with the Wap project directory relative to the solution, i.e. MyWpfApp.Package.
-      #Wap_Project_Path: Satellite-Packages/ClassLibrary                   # Replace with the path to your Wap project, i.e. MyWpf.App.Package\MyWpfApp.Package.wapproj.
       REPO_NAME : sample-nuget
         
     steps:
@@ -56,8 +53,8 @@ jobs:
      
     - name: Build & Deploy
       run: | 
-        cd Satellite-Packages 
-        jf nuget restore ./SatellitePackageSample.sln
+        cd NuGetProtocolSamples
+        jf nuget restore 
         nuget pack
 
 
