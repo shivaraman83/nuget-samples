@@ -58,7 +58,7 @@ jobs:
       run: | 
         cd Satellite-Packages 
         jf nuget restore ./SatellitePackageSample.sln
-        jf nuget pack
+        nuget pack
 
 
 
