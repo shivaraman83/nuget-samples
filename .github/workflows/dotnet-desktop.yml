@@ -55,7 +55,7 @@ jobs:
       run: | 
         cd NuGetProtocolSamples
         jf nuget restore 
-        nuget pack
+        jf nuget pack
 
 
 
